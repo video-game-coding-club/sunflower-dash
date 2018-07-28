@@ -1,0 +1,30 @@
+let canvas = document.getElementById('game-layer');
+let stage = document.getElementById("stage");
+let ctx = canvas.getContext("2d");
+
+(function() {
+  function initialize() {
+    window.addEventListener('resize', resizeCanvas, false);
+    resizeCanvas();
+  }
+
+  function redraw() {
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth = '5';
+    ctx.strokeRect(0, 0, window.innerWidth, window.innerHeight);
+  }
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    redraw();
+  }
+
+  initialize();
+})();
+
+let draw = function() {
+  window.requestAnimationFrame(draw);
+};
+
+draw();
