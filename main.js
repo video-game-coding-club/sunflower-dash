@@ -23,6 +23,10 @@ let ctx = canvas.getContext("2d");
   initialize();
 })();
 
+let clear = function(color) {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+};
+
 let gameStats = function() {
   ctx.fillStyle = "black";
   ctx.font = "32px Sans";
@@ -33,6 +37,7 @@ let gameStats = function() {
 let draw = function() {
   window.requestAnimationFrame(draw);
 
+  clear();
   gameStats();
 };
 
