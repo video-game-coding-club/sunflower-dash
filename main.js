@@ -23,8 +23,17 @@ let ctx = canvas.getContext("2d");
   initialize();
 })();
 
+let gameStats = function() {
+  ctx.fillStyle = "black";
+  ctx.font = "32px Sans";
+  ctx.textBaseline = "top";
+  ctx.fillText("Canvas size = " + canvas.width + " x " + canvas.height, 10, 10);
+};
+
 let draw = function() {
   window.requestAnimationFrame(draw);
+
+  gameStats();
 };
 
 draw();
