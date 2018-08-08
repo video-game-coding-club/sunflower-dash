@@ -1,5 +1,4 @@
 let canvas = document.getElementById('game-layer');
-let stage = document.getElementById("stage");
 let ctx = canvas.getContext("2d");
 
 (function() {
