@@ -4,4 +4,4 @@
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/video-game-coding-club/sunflower-dash.svg)](https://github.com/video-game-coding-club/sunflower-dash/pulls)
 [![GitHub issues](https://img.shields.io/github/issues/video-game-coding-club/sunflower-dash.svg)](https://github.com/video-game-coding-club/sunflower-dash/issues)
 
-You can play the game right here: [**Play Geometry Smash**](game.html)
+You can play the game right here: [**Play Sunflower Dash**](game.html)
