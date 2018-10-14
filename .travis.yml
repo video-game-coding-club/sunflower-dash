@@ -8,12 +8,10 @@ node_js:
   - "node"
 
 install:
-  - npm install jshint -g
-  - npm install PrettyCSS -g
-  - npm install js-beautify -g
-  - npm install html-linter -g
+  - npm install jshint PrettyCSS js-beautify html-linter -g
   - bundle install
 
 script:
   - ./lint.sh
   - bundle exec danger
+  - bundle exec jekyll build
