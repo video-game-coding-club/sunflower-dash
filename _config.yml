@@ -1,3 +1,7 @@
 theme: jekyll-theme-hacker
 title: Sunflower Dash
 google_analytics: UA-123354485-1
+plugins:
+  - jekyll-mentions
+  - jekyll-seo-tag
+  - jekyll-toc
