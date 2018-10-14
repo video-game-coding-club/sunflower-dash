@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Welcome to Sunflower Dash"
+---
+
 # The Game
 
 [![Build Status](https://www.travis-ci.com/video-game-coding-club/sunflower-dash.svg?branch=master)](https://www.travis-ci.com/video-game-coding-club/sunflower-dash)
