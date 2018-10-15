@@ -9,4 +9,14 @@ title: "Welcome to Sunflower Dash"
 
 # The Game
 
+Sunflower Dash is a drawing game with lots of sunflowers. The game is
+still in the very early stages, but we are hoping to make good
+progress during this school year.
+
 You can play the game right here: [**Play Sunflower Dash**](game.html)
+
+# Authors
+
+In alphabetical order:
+
+- Ajla Bock (@ajlabock)
