@@ -7,3 +7,10 @@ body {
     overflow: hidden;
     display: block;
 }
+
+canvas {
+    border: 1px solid black;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

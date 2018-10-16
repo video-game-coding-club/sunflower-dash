@@ -1,5 +1,12 @@
-let canvas = document.getElementById('game-layer');
-let ctx = canvas.getContext("2d");
+let pictureCanvas = document.getElementById("picture-layer");
+let pictureCtx = pictureCanvas.getContext("2d");
+
+let dragon = new Image();
+
+let canvas = document.getElementById("paint-layer");
+let ctx = canvas.getContext("2d", {
+  alpha: true
+});
 
 let mousePosition = {
   x: 0,
@@ -46,11 +53,11 @@ let paint = function() {
     ctx.lineTo(mousePosition.x, mousePosition.y);
     ctx.closePath();
     ctx.strokeStyle = "black";
-    ctx.lineWidth = "20";
+    ctx.lineWidth = "6";
     ctx.stroke();
 
     ctx.beginPath();
-    ctx.ellipse(mousePosition.x, mousePosition.y, 10, 10, 0, 0, 2 * Math.PI);
+    ctx.ellipse(mousePosition.x, mousePosition.y, 3, 3, 0, 0, 2 * Math.PI);
     ctx.closePath();
     ctx.fillStyle = "black";
     ctx.fill();
@@ -65,23 +72,31 @@ let draw = function() {
 };
 
 (function() {
+  function drawImage() {
+    pictureCtx.drawImage(dragon, 0, 0, pictureCanvas.width, pictureCanvas.height);
+  };
+
   function redraw() {
-    ctx.strokeStyle = 'black';
-    ctx.lineWidth = '5';
-    ctx.strokeRect(0, 0, window.innerWidth, window.innerHeight);
+    drawImage();
   }
 
   function resizeCanvas() {
+    pictureCanvas.width = window.innerWidth;
+    pictureCanvas.height = window.innerHeight;
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     redraw();
   }
 
   function initialize() {
-    window.addEventListener('resize', resizeCanvas, false);
+    window.addEventListener('resize', resizeCanvas);
     canvas.addEventListener('mousedown', mouseDown);
     canvas.addEventListener('mouseup', mouseUp);
     canvas.addEventListener('mousemove', mouseMove);
+
+    pictureCanvas.style.opacity = "0.6";
+    dragon.src = "dragon.jpg";
+    dragon.onload = drawImage;
     resizeCanvas();
   }
 
