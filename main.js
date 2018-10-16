@@ -74,7 +74,7 @@ let draw = function() {
 (function() {
   function drawImage() {
     pictureCtx.drawImage(dragon, 0, 0, pictureCanvas.width, pictureCanvas.height);
-  };
+  }
 
   function redraw() {
     drawImage();
