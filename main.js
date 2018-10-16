@@ -70,14 +70,12 @@ let draw = function() {
 };
 
 (function() {
-  function redraw() {
+  function drawImage() {
     pictureCtx.drawImage(dragon, 0, 0, pictureCanvas.width, pictureCanvas.height);
-    pictureCtx.beginPath();
-    pictureCtx.ellipse(10, 10, 200, 200, 0, 0, 2 * Math.PI);
-    pictureCtx.closePath();
-    pictureCtx.fillStyle = "blue";
-    pictureCtx.fill();
+  };
 
+  function redraw() {
+    drawImage();
     ctx.strokeStyle = 'black';
     ctx.lineWidth = '5';
     ctx.strokeRect(0, 0, window.innerWidth, window.innerHeight);
@@ -92,14 +90,14 @@ let draw = function() {
   }
 
   function initialize() {
-    window.addEventListener('resize', resizeCanvas, false);
+    window.addEventListener('resize', resizeCanvas);
     canvas.addEventListener('mousedown', mouseDown);
     canvas.addEventListener('mouseup', mouseUp);
     canvas.addEventListener('mousemove', mouseMove);
 
     canvas.style.opacity = "0.4";
     dragon.src = "dragon.jpg";
-
+    dragon.onload = drawImage;
     resizeCanvas();
   }
 

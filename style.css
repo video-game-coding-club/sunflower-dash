@@ -7,3 +7,11 @@ body {
     overflow: hidden;
     display: block;
 }
+
+#picture-layer {
+    z-index: 0;
+}
+
+#paint-layer {
+    z-index: 1;
+}
