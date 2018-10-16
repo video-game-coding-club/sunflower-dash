@@ -4,7 +4,9 @@ let pictureCtx = pictureCanvas.getContext("2d");
 let dragon = new Image();
 
 let canvas = document.getElementById("paint-layer");
-let ctx = canvas.getContext("2d");
+let ctx = canvas.getContext("2d", {
+  alpha: true
+});
 
 let mousePosition = {
   x: 0,
@@ -51,11 +53,11 @@ let paint = function() {
     ctx.lineTo(mousePosition.x, mousePosition.y);
     ctx.closePath();
     ctx.strokeStyle = "black";
-    ctx.lineWidth = "20";
+    ctx.lineWidth = "6";
     ctx.stroke();
 
     ctx.beginPath();
-    ctx.ellipse(mousePosition.x, mousePosition.y, 10, 10, 0, 0, 2 * Math.PI);
+    ctx.ellipse(mousePosition.x, mousePosition.y, 3, 3, 0, 0, 2 * Math.PI);
     ctx.closePath();
     ctx.fillStyle = "black";
     ctx.fill();
@@ -76,16 +78,13 @@ let draw = function() {
 
   function redraw() {
     drawImage();
-    ctx.strokeStyle = 'black';
-    ctx.lineWidth = '5';
-    ctx.strokeRect(0, 0, window.innerWidth, window.innerHeight);
   }
 
   function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
     pictureCanvas.width = window.innerWidth;
     pictureCanvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
     redraw();
   }
 
@@ -95,7 +94,7 @@ let draw = function() {
     canvas.addEventListener('mouseup', mouseUp);
     canvas.addEventListener('mousemove', mouseMove);
 
-    canvas.style.opacity = "0.4";
+    pictureCanvas.style.opacity = "0.6";
     dragon.src = "dragon.jpg";
     dragon.onload = drawImage;
     resizeCanvas();
