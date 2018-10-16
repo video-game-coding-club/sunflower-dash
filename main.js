@@ -1,4 +1,9 @@
-let canvas = document.getElementById('game-layer');
+let pictureCanvas = document.getElementById("picture-layer");
+let pictureCtx = pictureCanvas.getContext("2d");
+
+let dragon = new Image();
+
+let canvas = document.getElementById("paint-layer");
 let ctx = canvas.getContext("2d");
 
 let mousePosition = {
@@ -66,6 +71,13 @@ let draw = function() {
 
 (function() {
   function redraw() {
+    pictureCtx.drawImage(dragon, 0, 0, pictureCanvas.width, pictureCanvas.height);
+    pictureCtx.beginPath();
+    pictureCtx.ellipse(10, 10, 200, 200, 0, 0, 2 * Math.PI);
+    pictureCtx.closePath();
+    pictureCtx.fillStyle = "blue";
+    pictureCtx.fill();
+
     ctx.strokeStyle = 'black';
     ctx.lineWidth = '5';
     ctx.strokeRect(0, 0, window.innerWidth, window.innerHeight);
@@ -74,6 +86,8 @@ let draw = function() {
   function resizeCanvas() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+    pictureCanvas.width = window.innerWidth;
+    pictureCanvas.height = window.innerHeight;
     redraw();
   }
 
@@ -82,6 +96,10 @@ let draw = function() {
     canvas.addEventListener('mousedown', mouseDown);
     canvas.addEventListener('mouseup', mouseUp);
     canvas.addEventListener('mousemove', mouseMove);
+
+    canvas.style.opacity = "0.4";
+    dragon.src = "dragon.jpg";
+
     resizeCanvas();
   }
 
