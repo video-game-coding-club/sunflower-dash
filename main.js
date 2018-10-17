@@ -91,8 +91,11 @@ let draw = function() {
   function initialize() {
     window.addEventListener('resize', resizeCanvas);
     canvas.addEventListener('mousedown', mouseDown);
+    canvas.addEventListener('touchstart', mouseDown);
     canvas.addEventListener('mouseup', mouseUp);
+    canvas.addEventListener('touchend', mouseUp);
     canvas.addEventListener('mousemove', mouseMove);
+    canvas.addEventListener('touchmove', mouseMove);
 
     pictureCanvas.style.opacity = "0.6";
     dragon.src = "dragon.jpg";
