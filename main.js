@@ -35,6 +35,10 @@ let mouseDown = function(event) {
   }
 };
 
+let touchStart = function(event) {
+  brush_is_painting = true;
+};
+
 let mouseUp = function(event) {
   brush_is_painting = false;
 };
@@ -91,7 +95,7 @@ let draw = function() {
   function initialize() {
     window.addEventListener('resize', resizeCanvas);
     canvas.addEventListener('mousedown', mouseDown);
-    canvas.addEventListener('touchstart', mouseDown);
+    canvas.addEventListener('touchstart', touchStart);
     canvas.addEventListener('mouseup', mouseUp);
     canvas.addEventListener('touchend', mouseUp);
     canvas.addEventListener('mousemove', mouseMove);
