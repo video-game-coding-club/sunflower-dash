@@ -50,6 +50,14 @@ let mouseMove = function(event) {
   mousePosition.y = event.clientY;
 };
 
+let touchMove = function(event) {
+  lastMousePosition.x = mousePosition.x;
+  lastMousePosition.y = mousePosition.y;
+  let lastTouch = event.targetTouches.item(event.targetTouches.length - 1);
+  mousePosition.x = lastTouch.clientX;
+  mousePosition.y = lastTouch.clientY;
+};
+
 let paint = function() {
   if (brush_is_painting) {
     ctx.beginPath();
@@ -99,7 +107,7 @@ let draw = function() {
     canvas.addEventListener('mouseup', mouseUp);
     canvas.addEventListener('touchend', mouseUp);
     canvas.addEventListener('mousemove', mouseMove);
-    canvas.addEventListener('touchmove', mouseMove);
+    canvas.addEventListener('touchmove', touchMove);
 
     pictureCanvas.style.opacity = "0.6";
     dragon.src = "dragon.jpg";
