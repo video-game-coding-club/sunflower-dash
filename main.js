@@ -43,6 +43,10 @@ let mouseUp = function(event) {
   brush_is_painting = false;
 };
 
+let touchEnd = function(event) {
+  brush_is_painting = false;
+};
+
 let mouseMove = function(event) {
   lastMousePosition.x = mousePosition.x;
   lastMousePosition.y = mousePosition.y;
@@ -105,7 +109,7 @@ let draw = function() {
     canvas.addEventListener('mousedown', mouseDown);
     canvas.addEventListener('touchstart', touchStart);
     canvas.addEventListener('mouseup', mouseUp);
-    canvas.addEventListener('touchend', mouseUp);
+    canvas.addEventListener('touchend', touchEnduseUp);
     canvas.addEventListener('mousemove', mouseMove);
     canvas.addEventListener('touchmove', touchMove);
 
