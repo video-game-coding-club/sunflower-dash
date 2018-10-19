@@ -36,6 +36,9 @@ let mouseDown = function(event) {
 };
 
 let touchStart = function(event) {
+  let startTouch = event.targetTouches.item(even.targetTouches.length - 1);
+  lastMousePosition.x = startTouch.clientX;
+  lastMousePosition.y = startTouch.clientY;
   brush_is_painting = true;
 };
 
