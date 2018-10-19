@@ -112,7 +112,7 @@ let draw = function() {
     canvas.addEventListener('mousedown', mouseDown);
     canvas.addEventListener('touchstart', touchStart);
     canvas.addEventListener('mouseup', mouseUp);
-    canvas.addEventListener('touchend', touchEnduseUp);
+    canvas.addEventListener('touchend', touchEnd);
     canvas.addEventListener('mousemove', mouseMove);
     canvas.addEventListener('touchmove', touchMove);
 
