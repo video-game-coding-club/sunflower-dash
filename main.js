@@ -22,11 +22,7 @@ let clear = function(color) {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 };
 
-let gameStats = function() {
-  ctx.fillStyle = "black";
-  ctx.font = "32px Sans";
-  ctx.textBaseline = "top";
-  ctx.fillText("Canvas size = " + canvas.width + " x " + canvas.height, 10, 10);
+let toolbox = function() {
 };
 
 let mouseDown = function(event) {
@@ -87,7 +83,7 @@ let draw = function() {
   window.requestAnimationFrame(draw);
 
   paint();
-  gameStats();
+  toolbox();
 };
 
 (function() {
